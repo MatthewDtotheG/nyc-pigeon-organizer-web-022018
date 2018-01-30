@@ -1,7 +1,10 @@
+require "pry"
+
 def nyc_pigeon_organizer(data)
   data.each_with_object({}) do |(key, h), result|
     h.each do |value, names|
       names.each do |name|
+        binding.pry
         result[name] ||= {}
         result[name][key] ||= []
         result[name][key] << value.to_s
